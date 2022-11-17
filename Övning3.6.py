@@ -1,10 +1,21 @@
-Female = {"Emma":["Heterosexual","24","Universe"],"Mia":["Heterosexual","27","Cars"],"Alexis":["Heterosexual","18","Movies"],"Elsa":["Heterosexual","40","Politics"],
-"Janice":["Heterosexual","36","Books"],"Kimmy":["Homosexual","30","Ghosts"],"Mia":["Homosexual","20","Cars"],"Piper":["Homosexual","40","Books"],
-"Eve":["Homosexual","18","Movies"],"Hermione":["Homosexual","30","Food"]} 
-Male = {"Johnny":["Heterosexual","32","Religion"],"Carlos":["Heterosexual","18","Gaming"],"Robert":["Heterosexual","22","Politics"],"Milo":["Heterosexual","40","Movies"],
-"Jordan":["Heterosexual","28","Books"],"Fernando":["Homosexual","18","Books"],"Pedro":["Homosexual","28","Gaming"],
-"Anthony":["Homosexual","40","Politics"],"Jeremy":["Homosexual","25","Cars"],"Adam":["Homosexual","18","Religion"]}
+people =  [
+   {"name": "Emma", "sex": "female", "age": 24},
+   {"name": "Mia", "sex": "female", "age": 22},
+   {"name": "Johnny", "sex": "male", "age": 34},
+   {"name": "Alexis", "sex": "female", "age": 44},
+   {"name": "Alexis", "sex": "male", "age": 33}
+]
 
-groupA=Female
-groupB=Male
+
+selected_attributes = {"name": "Alexis", "sex": "male"}
+
+def filter_people(people, attributes):
+    result = people
+    for k, v in attributes.items():
+        result = [ p for p in result if p[k] == v]
+    
+    return result
+
+
+print(*filter_people(people, selected_attributes), sep="\n")
 
