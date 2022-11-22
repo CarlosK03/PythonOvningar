@@ -19,3 +19,11 @@
 
 # print(*filter_people(people, selected_attributes), sep="\n")
 
+name = input("Name ").capitalize()
+gender = input("M or F").upper()
+
+if gender=="M":
+    if name[0] > "N":
+        print("A")
+else:
+    pass

@@ -1,12 +1,10 @@
 import random
-import time
 
 print("ROCK, PAPER, SCISSORS")
 
-
 Moves=["r","p","s"]
-# It's a while loop that assigns the input to Move1 and then checks if it's not equal to q.
-while (Move1 :=input("Enter your move: (r)ock (p)aper (s)cissors or (q)uit: ").lower()) != "q":
+
+while (Move1 :=input("Enter your move: (r)ock (p)aper (s)cissors or (q)uit> ").lower()) != "q":
     if Move1 in {"r", "p", "s"}:
         Move2 = random.choice(Moves)
         if Move1=="r":
@@ -33,6 +31,6 @@ while (Move1 :=input("Enter your move: (r)ock (p)aper (s)cissors or (q)uit: ").l
                 print("AI chose Paper, you've won!")
             elif Move2=="r":
                 print("AI chose Rock, you lost!")
-
+                
 exit()
 
