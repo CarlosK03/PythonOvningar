@@ -26,12 +26,12 @@ def lower(text): #Homecooked lower()
                 break
     return output
 
-for c in text:
+for c in text: #Checking if c is in the alphabet then lowercasing it.
     if c in "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ":
         c = lower(c)
-        for i in range(find_length(characters)):
+        for i in range(find_length(characters)): #find the index
             item = characters[i]
-            if c == item:
+            if c == item: #check if index is the right one
                 uses[i] += 1
                 break
         else: # Character has not been added to the list of character counts yet.
@@ -42,6 +42,7 @@ most_use = 0 # Set lower bound
 most_character = None
 least_use = find_length(text) # Set upper bound
 least_character = None
+# Iterating through the list of characters and the list of uses.
 for character, use in zip(characters, uses):
     if use < least_use:
         least_use = use
