@@ -111,15 +111,15 @@ def calculate_quotients(number_n, number_m) -> None:
     :param number_n: The number of the file to read from
     :param number_m: The number of the file to divide by
     """
-    with open(f"table_{number_n}.txt") as f_n, open(f"file_{number_m}.txt") as f_m:
-        file_n = list(map(int, f_n.readlines()[1:]))
-        file_m = list(map(int, f_m.readlines()[1:]))
+    with open(f"table_{number_n}.txt") as f_n, open(f"table_{number_m}.txt") as f_m:
+        table_n = list(map(int, f_n.readlines()[1:]))
+        table_m = list(map(int, f_m.readlines()[1:]))
 
-        for file_number_n in file_n:
-            for file_number_m in file_m:
-                quotient = f"{file_number_n / file_number_m:.2f}"
+        for table_number_n in table_n:
+            for table_number_m in table_m:
+                quotient = f"{table_number_n / table_number_m:.2f}"
 
-                print(f"{file_number_n} / {file_number_m} = {quotient}")
+                print(f"{table_number_n} / {table_number_m} = {quotient}")
 
 
 if __name__ == '__main__':
