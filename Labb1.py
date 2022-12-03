@@ -44,21 +44,60 @@
 #     rundad=round(div, 2)
 #     print(f"{i} / {j} = {rundad}",end=" ")
 
-def reads_file(n: int) -> None:
+def individualizing_file_n(number_n: int) -> None:
     """
-    It reads the last word of the first line of a file
+    It takes a number n, and writes a multiplication table for n to a file named file_n.txt
     
-def individualizing_file(number: int) -> None:
-    increasing_number: int = number
-    with open(f"file_{increasing_number}.txt", "w") as f:
-        f.write(f"Multiplication table for ")
-        for _ in range(10):
-            print(n*_, file=f)
-            increasing_number += n
+    :param number_n: int = number_n
+    :type number_n: int
+    """
+    increasing_number_n: int = number_n
+    with open(f"file_{increasing_number_n}.txt", "w") as f:
+        f.write(f"Multiplication table for n:\n")
+
+        for multiplicator in range(1, 10 + 1):
+            print(n * multiplicator, file=f)
+            increasing_number_n += n
+
+
+def individualizing_file_m(number_m: int) -> None:
+    """
+    It takes a number, and writes a multiplication table for that number to a file
+    
+    :param number_m: int = number_m
+    :type number_m: int
+    """
+    increasing_number_m: int = number_m
+    with open(f"file_{increasing_number_m}.txt", "w") as f:
+        f.write(f"Multiplication table for m:\n")
+
+        for multiplicator in range(1, 10 + 1):
+            print(m * multiplicator, file=f)
+            increasing_number_m += m
+
+
+def calculate_quotients(number_n, number_m) -> None:
+    """
+    It takes two numbers, opens two files, reads the numbers from the files, and prints the quotients of
+    the numbers
+    
+    :param number_n: The number of the file to read from
+    :param number_m: The number of the file to divide by
+    """
+    with open(f"file_{number_n}.txt") as f_n, open(f"file_{number_m}.txt") as f_m:
+        file_n = list(map(int, f_n.readlines()[1:]))
+        file_m = list(map(int, f_m.readlines()[1:]))
+
+        for file_number_n in file_n:
+            for file_number_m in file_m:
+                quotient = f"{file_number_n / file_number_m:.2f}"
+
+                print(f"{file_number_n} / {file_number_m} = {quotient}")
 
 
 if __name__ == '__main__':
     n = int(input("Enter a number between 1-9: "))
     m = int(input("Enter a number between 1-9: "))
-    individualizing_file(n)
+    individualizing_file_n(n)
     individualizing_file_m(m)
+    calculate_quotients(n, m)
