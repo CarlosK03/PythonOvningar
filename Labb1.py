@@ -9,7 +9,6 @@ def calculate_quotients(n: int, m: int) -> None:
     with open(f"table_{n}.txt") as nfile, open(f"table_{m}.txt") as mfile:
         ntable = tuple(map(int, nfile.readlines()[1:]))
         mtable = tuple(map(int, mfile.readlines()[1:]))
-
         for tn in ntable:
             for tm in mtable:
                 q = tn / tm
@@ -22,7 +21,6 @@ def main():
     individualizing_file_num(n, "n")
     individualizing_file_num(m, "m")
     calculate_quotients(n, m)
-
 
 if __name__ == '__main__':
     main()
