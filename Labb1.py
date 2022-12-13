@@ -39,20 +39,37 @@
 #     rad = rad.split()
 #     rad2 = rad2.split()
 
+# Dividing the numbers in the list rad and rad2 and printing them out.
 # for i,j in zip(rad,rad2):
 #     div=float(i)/float(j)
 #     rundad=round(div, 2)
 #     print(f"{i} / {j} = {rundad}",end=" ")
-    
+
+#Carlos lösning
 def individualizing_file(number: int) -> None:
     increasing_number: int = number
     with open(f"file_{increasing_number}.txt", "w") as f:
-        f.write(f"Multiplication table for ")
-        for _ in range(10):
+        f.write(f"Multiplication table for n")
+        for _ in range(10+1):
             print(n*_, file=f)
             increasing_number += n
+
+def individualizing_file_m(number: int) -> None:
+    increasing_number_m: int = number
+    with open(f"file_{increasing_number_m}.txt", "w") as f:
+        f.write(f"Multiplication table for m\n")
+        for x in range(10+1):
+            print(m*x, file=f)
+            increasing_number_m += m
+            
+def calc():
+    
+
+
 
 
 if __name__ == '__main__':
     n = int(input("Enter a number between 1-9: "))
+    m = int(input("Enter a number between 1-9: "))
     individualizing_file(n)
+    individualizing_file_m(m)
