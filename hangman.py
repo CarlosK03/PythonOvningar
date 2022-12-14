@@ -1,3 +1,4 @@
+
 secret = "car"
 n_trials = 10
 
